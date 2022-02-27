@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="GtkFixed" id="fixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="width-request">800</property>
+            <property name="height-request">45</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Veuillez choisir le type de makefile que vous souhaitez créer</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="stack1">
+            <property name="width-request">800</property>
+            <property name="height-request">500</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkFixed" id="stk_fixed1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkRadioButton" id="MkS_gcc_radioBtn">
+                    <property name="label" translatable="yes">GCC</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
+                    <property name="active">True</property>
+                    <property name="draw-indicator">False</property>
+                  </object>
+                  <packing>
+                    <property name="x">245</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="MkS_g++_radioBtn">
+                    <property name="label" translatable="yes">G++</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
+                    <property name="active">True</property>
+                    <property name="draw-indicator">False</property>
+                    <property name="group">MkS_gcc_radioBtn</property>
+                  </object>
+                  <packing>
+                    <property name="x">350</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="MkS_clang_radioBtn">
+                    <property name="label" translatable="yes">CLANG</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
+                    <property name="active">True</property>
+                    <property name="draw-indicator">False</property>
+                    <property name="group">MkS_gcc_radioBtn</property>
+                  </object>
+                  <packing>
+                    <property name="x">455</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label2">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Nom du fichier de fonction
+       (Ne PAS ajouter le .h)</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">50</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="MkS_functionEntry">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">100</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label3">
+                    <property name="width-request">300</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Nom du fichier de librairie
+  (Exemple liste chainée)</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">150</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="MkS_librairieEntry">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label4">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Flags de compilation</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">250</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="MkS_flagsEntry">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">275</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="MkS_generateBtn">
+                    <property name="label" translatable="yes">Générer</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">350</property>
+                    <property name="y">350</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">MakefileS</property>
+                <property name="title" translatable="yes">Makefile Simple</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="stk_fixed2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkRadioButton" id="MkA_gcc_radioBtn">
+                    <property name="label" translatable="yes">GCC</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
+                    <property name="active">True</property>
+                    <property name="draw-indicator">False</property>
+                  </object>
+                  <packing>
+                    <property name="x">245</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="MkA_g++_radioBtn">
+                    <property name="label" translatable="yes">G++</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
+                    <property name="draw-indicator">False</property>
+                    <property name="group">MkA_gcc_radioBtn</property>
+                  </object>
+                  <packing>
+                    <property name="x">350</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="MkA_clang_radioBtn">
+                    <property name="label" translatable="yes">CLANG</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
+                    <property name="draw-indicator">False</property>
+                    <property name="group">MkA_gcc_radioBtn</property>
+                  </object>
+                  <packing>
+                    <property name="x">455</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label5">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Nom du fichier de fonction
+       (Ne PAS ajouter le .h)</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">50</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="MkA_functionEntry">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">100</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label6">
+                    <property name="width-request">300</property>
+                    <property name="height-request">50</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Nom du fichier de librairie
+  (Exemple liste chainée)</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">140</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="MkA_librairieEntry">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">190</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label7">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Flags de compilation</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">360</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="MkA_flagsEntry">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">385</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="MkA_generateBtn">
+                    <property name="label" translatable="yes">Générer</property>
+                    <property name="width-request">100</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">350</property>
+                    <property name="y">425</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label8">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Emplacement du fichier source</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">225</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFileChooserButton" id="MkA_sourceFile">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="title" translatable="yes"/>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">250</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label9">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Emplacement du fichier objet</property>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">290</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFileChooserButton" id="MkA_objectFile">
+                    <property name="width-request">300</property>
+                    <property name="height-request">25</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="title" translatable="yes"/>
+                  </object>
+                  <packing>
+                    <property name="x">250</property>
+                    <property name="y">315</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="name">MakefileA</property>
+                <property name="title" translatable="yes">Makefile Avancé</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="y">100</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStackSwitcher" id="stkSwitcher">
+            <property name="width-request">250</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="homogeneous">True</property>
+            <property name="stack">stack1</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">55</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
