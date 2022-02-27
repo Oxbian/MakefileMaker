@@ -17,10 +17,18 @@ Pour l'utiliser il suffit de remplir les différents champs, le premier est le c
 
 ## Compilation & installation:  
 
-Pour installer le projet il suffit d'executer les commandes suivantes:  
+Pour installer le projet il suffit d'executer les commandes suivantes et d'avoir GTK 3.0 d'installer sur votre machine:  
 
     git clone https://github.com/ARKAGEDON/MakefileMaker.git
     cd MakefileMaker && make
+
+Pour gtk:
+__Arch & dérivés__:
+    
+    sudo pacman -S gtk3
+__Ubuntu & Debian:
+    
+    sudo apt-get install libgtk-3-0
 
 ## Contribution au projet:  
   
