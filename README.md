@@ -7,10 +7,12 @@ MakefileMaker permet de simplifier la tâche pénible de créer son makefile et/
 
 ## Comment ça marche ?  
 MakefileMaker se veut être un logiciel simple d'utilisation, en arrivant sur l'application vous avez le choix entre 2 types de makefile:  
-- [Image Makefile simple](https://i.imgur.com/G58rirc.png) Les makefiles simples, tout les règles de compilation sont décrites explicitement, aucune variable n'est utilisé ni rien.  
+- ![Image Makefile simple](https://i.imgur.com/G58rirc.png)  
+Les makefiles simples, tout les règles de compilation sont décrites explicitement, aucune variable n'est utilisé ni rien.  
 Pour l'utiliser il suffit de remplir les différents champs, le premier est le choix de votre compilateur (GCC par défaut), puis le nom de votre fichier de fonction (__Attention à ne pas mettre l'extension du fichier, juste son nom suffit__), puis le nom de votre fichier de librairie (__Attention à ne pas mettre l'extension du fichier, juste son nom suffit__), et enfin vos flags de compilation (__Ne pas oublier les - devant vos flags, par exemple: -Wall__).  
 
-- [Image Makefile avancé](https://i.imgur.com/zqbfSHg.png) Les makefiles avancés, le makefile est optimisé pour avoir le moins de contenu possible, les variables sont utilisés et les règles de compilation sont implicites.  
+- ![Image Makefile avancé](https://i.imgur.com/zqbfSHg.png)  
+Les makefiles avancés, le makefile est optimisé pour avoir le moins de contenu possible, les variables sont utilisés et les règles de compilation sont implicites.  
 Pour l'utiliser il suffit de remplir les différents champs, le premier est le choix de votre compilateur (GCC par défaut), puis le nom de votre fichier de fonction (__Attention à ne pas mettre l'extension du fichier, juste son nom suffit__), puis le nom de votre fichier de librairie (__Attention à ne pas mettre l'extension du fichier, juste son nom suffit__), puis l'emplacement de votre dossier source (__Pour être sur que ce dossier soit sélectionner cliquer sûr un des fichiers que le dossier source contient__), puis l'emplacement du dossier object si vous en souhaitez un (__Pareil suffit de cliquer sur un fichier dans ce dossier pour être sûr qu'il soit sélectionné__) et enfin vos flags de compilation (__Ne pas oublier les - devant vos flags, par exemple: -Wall__).  
 
 ## Compilation & installation:  
