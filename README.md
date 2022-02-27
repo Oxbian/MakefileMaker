@@ -19,8 +19,8 @@ Pour l'utiliser il suffit de remplir les différents champs, le premier est le c
 
 Pour installer le projet il suffit d'executer les commandes suivantes:  
 
-        git clone https://github.com/ARKAGEDON/MakefileMaker.git
-        make
+    git clone https://github.com/ARKAGEDON/MakefileMaker.git
+    cd MakefileMaker && make
 
 ## Contribution au projet:  
   
