@@ -168,7 +168,7 @@ void on_MkA_clang_radioBtn_toggled (GtkButton *btn, gpointer user_data)
 void on_MkA_generateBtn_clicked (GtkButton *btn, gpointer user_data)
 {
     MakeA *data = (MakeA*) user_data;
-    char compilator[6], function[gtk_entry_get_text_length (GTK_ENTRY(data->functionEntry))+1], librairie[gtk_entry_get_text_length (GTK_ENTRY(data->librairieEntry))+1], cflags[gtk_entry_get_text_length (GTK_ENTRY(data->flagsEntry))+1], srcDir[strlen(gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->sourceDir))) +1], objDir[strlen(gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->objectDir))) +1];
+    char compilator[6], function[gtk_entry_get_text_length (GTK_ENTRY(data->functionEntry))+1], librairie[gtk_entry_get_text_length (GTK_ENTRY(data->librairieEntry))+1], cflags[gtk_entry_get_text_length (GTK_ENTRY(data->flagsEntry))+1], srcDir[4096] = {'\0'}, objDir[4096] = {'\0'};
     switch (data->compilator)
     {
         case 0:
@@ -179,13 +179,21 @@ void on_MkA_generateBtn_clicked (GtkButton *btn, gpointer user_data)
             break;
         case 2:
             strncpy(compilator, "clang", 6);
-            break;
+            break;      
     }
-    strcpy(function, gtk_entry_get_text(GTK_ENTRY(data->functionEntry)));
-    strcpy(librairie, gtk_entry_get_text(GTK_ENTRY(data->librairieEntry)));
-    strcpy(cflags, gtk_entry_get_text(GTK_ENTRY(data->flagsEntry)));
-    strcpy(srcDir, gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->sourceDir)));
-    strcpy(objDir, gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->objectDir)));
+    strncpy(function, gtk_entry_get_text(GTK_ENTRY(data->functionEntry)), strlen(function));
+    strncpy(librairie, gtk_entry_get_text(GTK_ENTRY(data->librairieEntry)), strlen(librairie));
+    strncpy(cflags, gtk_entry_get_text(GTK_ENTRY(data->flagsEntry)), strlen(cflags));
+
+    if (gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(data->sourceDir)) != NULL)
+    {
+        strncpy(srcDir, gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->sourceDir)), strlen(gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->sourceDir))) +1);
+    }
+
+    if (gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(data->objectDir)) != NULL)
+    {
+        strncpy(objDir, gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->objectDir)), strlen(gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER(data->objectDir))) +1);
+    }
 
     /*We check if the srcDirectory isn't null else we just assume the files are in the same dir than the makefile*/
     if (strlen(srcDir) >= 1)
@@ -238,7 +246,7 @@ void on_MkA_generateBtn_clicked (GtkButton *btn, gpointer user_data)
             {
                 if (strlen(librairie) >= 3)
                 {
-                    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,"CC:= %s\nvpath %%.c %s\nvpath %.h %s\nvpath %%.o %s\n\nsources := %s.c %s.c main.c\nobjects := $(addprefix %s/,$(sources:.c=.o))\nCFLAGS := %s\n\nprog: $(objects)\n\t$(CC) -o prog $(objects) $(CFLAGS)\n\n$(objects): %s.h %s.h\n\n.PHONY : clean\nclean:\n\trm prog $(objects)\n\n.SECONDARY: $(objects)",
+                    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,"CC:= %s\nvpath %%.c %s\nvpath %%.h %s\nvpath %%.o %s\n\nsources := %s.c %s.c main.c\nobjects := $(addprefix %s/,$(sources:.c=.o))\nCFLAGS := %s\n\nprog: $(objects)\n\t$(CC) -o prog $(objects) $(CFLAGS)\n\n$(objects): %s.h %s.h\n\n.PHONY : clean\nclean:\n\trm prog $(objects)\n\n.SECONDARY: $(objects)",
                     compilator, srcDir, srcDir, srcDir, function, librairie, srcDir, cflags, function, librairie);
                     _set_lables_selectable(dialog);
                     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -246,7 +254,7 @@ void on_MkA_generateBtn_clicked (GtkButton *btn, gpointer user_data)
                 }
                 else
                 {
-                    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,"CC:= %s\nvpath %%.c %s\nvpath %.h %s\nvpath %%.o %s\n\nsources := %s.c main.c\nobjects := $(addprefix %s/,$(sources:.c=.o))\nCFLAGS := %s\n\nprog: $(objects)\n\t$(CC) -o prog $(objects) $(CFLAGS)\n\n$(objects): %s.h\n\n.PHONY : clean\nclean:\n\trm prog $(objects)\n\n.SECONDARY: $(objects)",
+                    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,"CC:= %s\nvpath %%.c %s\nvpath %%.h %s\nvpath %%.o %s\n\nsources := %s.c main.c\nobjects := $(addprefix %s/,$(sources:.c=.o))\nCFLAGS := %s\n\nprog: $(objects)\n\t$(CC) -o prog $(objects) $(CFLAGS)\n\n$(objects): %s.h\n\n.PHONY : clean\nclean:\n\trm prog $(objects)\n\n.SECONDARY: $(objects)",
                     compilator, srcDir, srcDir, srcDir, function, srcDir, cflags, function);
                     _set_lables_selectable(dialog);
                     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -257,7 +265,7 @@ void on_MkA_generateBtn_clicked (GtkButton *btn, gpointer user_data)
             {
                 if (strlen(librairie) >= 3)
                 {
-                    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,"CC:= %s\nvpath %%.c %s\nvpath %.h %s\nvpath %%.o %s\n\nsources := %s.c main.c\nobjects := $(addprefix %s/,$(sources:.c=.o))\nCFLAGS := %s\n\nprog: $(objects)\n\t$(CC) -o prog $(objects) $(CFLAGS)\n\n$(objects): %s.h\n\n.PHONY : clean\nclean:\n\trm prog $(objects)\n\n.SECONDARY: $(objects)",
+                    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,"CC:= %s\nvpath %%.c %s\nvpath %%.h %s\nvpath %%.o %s\n\nsources := %s.c main.c\nobjects := $(addprefix %s/,$(sources:.c=.o))\nCFLAGS := %s\n\nprog: $(objects)\n\t$(CC) -o prog $(objects) $(CFLAGS)\n\n$(objects): %s.h\n\n.PHONY : clean\nclean:\n\trm prog $(objects)\n\n.SECONDARY: $(objects)",
                     compilator, srcDir, srcDir, srcDir, librairie, srcDir, cflags, librairie);
                     _set_lables_selectable(dialog);
                     gtk_dialog_run(GTK_DIALOG(dialog));
