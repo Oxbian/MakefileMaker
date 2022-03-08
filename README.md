@@ -1,6 +1,12 @@
 # MakefileMaker
 -------------
 
+![Release](https://img.shields.io/badge/Release-v1.0-brightgreen?style=for-the-badge)
+![Language](https://img.shields.io/badge/Language-C-blue?style=for-the-badge)
+![Librarie](https://img.shields.io/badge/Librarie-Gtk-green?style=for-the-badge)
+![Size](https://img.shields.io/github/repo-size/ARKAGEDON/MakefileMaker?label=SIZE&style=for-the-badge)
+![Licence](https://img.shields.io/github/license/ARKAGEDON/MakefileMaker?style=for-the-badge)
+
 ## Makefile Maker qu'est ce que c'est ?  
 Il s'agit d'un générateur de Makefile basique pour un projet composé d'un fichier main, un fichier fonction et un fichier de librairie (ou autre fichier de fonction)  
 MakefileMaker permet de simplifier la tâche pénible de créer son makefile et/ou de l'adapter pour le projet actuel  
