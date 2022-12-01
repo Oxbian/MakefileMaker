@@ -4,8 +4,8 @@
 ![Release](https://img.shields.io/badge/Release-v1.0-brightgreen?style=for-the-badge)
 ![Language](https://img.shields.io/badge/Language-C-blue?style=for-the-badge)
 ![Librarie](https://img.shields.io/badge/Librarie-Gtk-green?style=for-the-badge)
-![Size](https://img.shields.io/github/repo-size/ARKAGEDON/MakefileMaker?label=SIZE&style=for-the-badge)
-![Licence](https://img.shields.io/github/license/ARKAGEDON/MakefileMaker?style=for-the-badge)
+![Size](https://img.shields.io/github/repo-size/Oxbian/MakefileMaker?label=SIZE&style=for-the-badge)
+![Licence](https://img.shields.io/github/license/Oxbian/MakefileMaker?style=for-the-badge)
 ![OpenSource](https://img.shields.io/badge/OpenSource-blue?style=for-the-badge&logo=opencollective&logoColor=white)
 
 ## Makefile Maker qu'est ce que c'est ?  
