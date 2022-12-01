@@ -29,7 +29,7 @@ Pour l'utiliser il suffit de remplir les différents champs, le premier est le c
 
 Pour installer le projet il suffit d'executer les commandes suivantes et d'avoir GTK 3.0 d'installer sur votre machine:  
 
-    git clone https://github.com/ARKAGEDON/MakefileMaker.git
+    git clone https://github.com/Oxbian/MakefileMaker.git
     cd MakefileMaker && make
 
 Pour gtk:  
