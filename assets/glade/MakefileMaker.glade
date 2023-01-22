@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="GtkFixed" id="fixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel" id="label">
+            <property name="width-request">800</property>
+            <property name="height-request">45</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Please choose the compilator you use</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="mk_gcc_radio_btn">
+            <property name="label" translatable="yes">GCC</property>
+            <property name="width-request">100</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">False</property>
+          </object>
+          <packing>
+            <property name="x">245</property>
+            <property name="y">45</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="mk_g++_radio_btn">
+            <property name="label" translatable="yes">G++</property>
+            <property name="width-request">100</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">False</property>
+            <property name="group">mk_gcc_radio_btn</property>
+          </object>
+          <packing>
+            <property name="x">350</property>
+            <property name="y">45</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="mk_clang_radio_btn">
+            <property name="label" translatable="yes">CLANG</property>
+            <property name="width-request">100</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">False</property>
+            <property name="group">mk_gcc_radio_btn</property>
+          </object>
+          <packing>
+            <property name="x">455</property>
+            <property name="y">45</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="filename_label">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Files name
+Don't forget .c extension and path
+(soda/coca.c)</property>
+            <property name="justify">center</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">95</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="mk_files_name_entry">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">155</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="flag_label">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Compilation flags</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">380</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="mk_flag_entry">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">410</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="mk_generate_btn">
+            <property name="label" translatable="yes">Generate</property>
+            <property name="width-request">100</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">350</property>
+            <property name="y">535</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="srcdir_label">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Source directory
+(let empty if null)</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">196</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="mk_srcdir_entry">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">245</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="incdir_label">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Include directory
+(let empty if null)</property>
+            <property name="justify">center</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">290</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="mk_incdir_entry">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">335</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="progname_label">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Programe name</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">455</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="mk_progname_entry">
+            <property name="width-request">300</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">250</property>
+            <property name="y">485</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
